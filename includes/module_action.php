@@ -48,27 +48,27 @@ if($service != "") {
         // COPY LOG
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
         }
             
             $exec = "$bin_autossh -M 0 -o 'ServerAliveInterval 60' -o 'ServerAliveCountMax 3' -N -R $autossh_listen:localhost:$autossh_port $autossh_user@$autossh_host -p $autossh_rport -i id_rsa -o CheckHostIP=no > /dev/null &";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
         
     } else if($action == "stop") {
         // STOP MODULE
         $exec = "$bin_killall $mod_name";
-        exec_fruitywifi($exec);
+        exec_blackbulb($exec);
         
         // COPY LOG
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
         }
 
     }
@@ -77,13 +77,13 @@ if($service != "") {
 
 if ($ssh_cert == "gen_certificate") {
     $exec = "$bin_rm id_rsa";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
     
     $exec = "$bin_rm id_rsa.pub";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
     
-    $exec = "$bin_ssh_keygen -t rsa -f id_rsa -C @FruityWifi";
-    exec_fruitywifi($exec);
+    $exec = "$bin_ssh_keygen -t rsa -f id_rsa -C @BlackBulb";
+    exec_blackbulb($exec);
     
     header('Location: ../index.php');
     exit;
@@ -92,10 +92,10 @@ if ($ssh_cert == "gen_certificate") {
 if ($install == "install_$mod_name") {
 
     $exec = "chmod 755 install.sh";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     $exec = "$bin_sudo ./install.sh > $log_path/install.txt &";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     header('Location: ../../install.php?module='.$mod_name);
     exit;

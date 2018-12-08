@@ -15,19 +15,19 @@
 <br>[Port  &nbsp;] 22	
 <br>[Listen] 2222
 <br>
-<br>FruityWifi --------> reverse@192.168.0.240 [2222]
+<br>BlackBulb --------> reverse@192.168.0.240 [2222]
 <br>
-<br>FruityWifi <-------- ssh -p 2222 user@localhost
+<br>BlackBulb <-------- ssh -p 2222 user@localhost
 <br>
 <br>
-<br><b>Example:</b> HTTP:8000 (FruityWifi HTTP)
+<br><b>Example:</b> HTTP:8000 (BlackBulb HTTP)
 <br>
 <br>[User  &nbsp;] reverse
 <br>[Host  &nbsp;] 192.168.0.240
 <br>[Port  &nbsp;] 8000
 <br>[Listen] 8888
 <br>
-<br>FruityWifi --------> reverse@192.168.0.240 [8888]
+<br>BlackBulb --------> reverse@192.168.0.240 [8888]
 <br>
-<br>FruityWifi <-------- wget/browser http://localhost:8888
+<br>BlackBulb <-------- wget/browser http://localhost:8888
 </span>

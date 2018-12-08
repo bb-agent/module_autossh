@@ -1,7 +1,7 @@
 module_autossh
 ===========
 
-FruityWifi AutoSSH module
+BlackBulb AutoSSH module
 
 
 v1.3
